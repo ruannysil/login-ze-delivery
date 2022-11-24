@@ -30,6 +30,10 @@
   margin: 0 0.5em;
 }
 
+.arrow:hover {
+  color: #3458a4;
+}
+
 .App-main {
   min-height: 16vh;
   margin: 1em auto 0 auto;
@@ -70,6 +74,11 @@
 .btn h3 {
   margin-right: 10px;
 }
+
+.btn h3 a {
+  color: #fff;
+}
+
 .btn .icon {
   font-size: 24px;
   margin: 0 6px 0 0px;
@@ -117,10 +126,18 @@
 
 .text-enter {
   text-align: center;
-  color: #666;
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 11px;
+}
+
+.text-enter a {
+  color: #666;
+}
+
+.text-enter a:hover {
+  cursor: pointer;
+  color: #ffcb00;
 }
 
 .form {
@@ -130,59 +147,73 @@
   gap: 14px;
 }
 
-.input-Text,
-.input-Psw {
-  padding: 20px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.inputBox {
+  position: relative;
+  /* width: 250px; */
 }
 
-.input-Text:focus ~ .spanU {
-  color: #ffcb00;
-  border-color: 1px solid #ffcb00;
-  transform: translateX(5px) translateY(-7px);
-  font-size: 0.95em;
-  padding: 0 10px;
-  background: #fafafa;
-  position: absolute;
-}
-
-.input-Psw:focus ~ .spanO {
-  color: #ffcb00;
-  transform: translateX(5px) translateY(4em);
-  font-size: 0.95em;
-  padding: 0 10px;
-  background: #fafafa;
-  position: absolute;
-}
-
-.spanU {
-  display: block;
-}
-
-.form .spanU {
-  position: absolute;
-  /* right: 17.2em;
-  top: 27.8em; */
-  padding: 21px 0 0 10px;
-  color: #333;
-  transition: 0.5s;
-}
-.form .spanO {
-  position: absolute;
-  /* right: 17.2em;
-  top: 32.4em; */
-  padding: 91px 0 0 10px;
-  color: #333;
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  border: 0.5px solid #333;
+  border-radius: 5px;
+  background: #fff;
+  outline: none;
   transition: 0.5s;
 }
 
-.close {
-  margin-top: -2.3em;
-  margin-left: 10em;
-  margin-right: 18px;
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: #ffcb00;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #fff;
+  border-left: 1px solid #ffcb00;
+  border-right: 1px solid #ffcb00;
+  letter-spacing: 0.2em;
+}
+
+.inputBox:nth-child(2) input:valid ~ span,
+.inputBox:nth-child(2) input:focus ~ span {
+  background: #ffcb00;
+  color: #333;
+  border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 1px solid #ffcb00;
+}
+i {
+  display: inline-block;
+  position: relative;
+  margin: 6px;
+  margin: -37px -11px -10px -37px;
+  height: 25px;
+  padding-left: 2.5em;
+}
+.iconE {
+  display: flex;
+  margin: 6px 19px 6px 15em;
+  flex-direction: row-reverse;
+}
+
+.close svg {
   font-size: 24px;
+  padding: 0 -19px;
   color: #666;
+  position: absolute;
+  padding: 6px;
+  margin: 0 -38px;
 }
 
 .form-btn {
@@ -203,15 +234,24 @@
   background: #ffcb00;
   cursor: pointer;
   transition: 0.5s;
+  color: #000;
 }
 
-.form-btn:hover {
+
+.form-btn:hover{
   opacity: 0.9;
   background: rgba(255, 38, 0, 0.878);
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
   box-shadow: 1px 1px 10px #ff220093;
 }
-
+.form-btn > a {
+  width: 100%;
+  padding: 0.5px 0.5px;
+  color: rgb(0, 0, 0);
+}
+a:hover {
+    color: #fafafa;
+}
 .text {
   margin-top: 15px;
 }
@@ -228,7 +268,7 @@
   margin-top: 32px;
   grid-area: footer / footer / footer / footer;
   position: absolute;
-    height: 17.3vh;
+  height: 17.3vh;
 }
 
 .div {
@@ -250,6 +290,17 @@
 
 .description h3 {
   margin: 0px 9px 0 9px;
+  cursor: pointer;
+  height: 15px;
+}
+
+.description h3 a {
+  color: #666;
+  
+}
+
+.description h3 a:hover {
+  color: #ffcb00;
 }
 
 .descriptions {
@@ -272,4 +323,8 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
+}
+
+label {
+  color: red;
 }
