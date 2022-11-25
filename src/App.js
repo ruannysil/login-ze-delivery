@@ -27,14 +27,24 @@ function App() {
     console.log(changeColor, " mudou a cor");
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (email === "" && password === "") {
+  //     setError(true);
+  //     return;
+  //   }
+
+  //   console.log(email, password);
+  // };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email === "" && password === "") {
       setError(true);
       return;
     }
-
-    console.log(email, password);
+   console.log(email, password)
   };
 
   return (
