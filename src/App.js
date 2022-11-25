@@ -11,9 +11,9 @@ function App() {
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
   const [changeColor, setChangeColor] = useState(false);
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState(false)
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
   const handleToggle = () => {
     setChangeColor(!changeColor);
@@ -27,21 +27,21 @@ function App() {
     console.log(changeColor, " mudou a cor");
   };
 
-  const handleSubmit=(e)=> {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(email.length === 0 || password.length === 0) {
+    if (email === "" && password === "") {
       setError(true);
+      return;
     }
-    console.log(email, password);
-  }
 
+    console.log(email, password);
+  };
 
   return (
-    
     <div className="App">
       <header className="App-header">
         <figure>
-        <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="logo" />
         </figure>
         <div className="container">
           <h5 className="title-test">Entra na conta com outros serviçõs:</h5>
@@ -54,7 +54,6 @@ function App() {
       <main className="App-main">
         <div className="container-main">
           <div className="grups">
-
             <button className="btn primary">
               <h3>
                 <a href="#/">continuar com facebook</a>
@@ -86,11 +85,18 @@ function App() {
             <h4 className="text-enter">Entar na conta com E-mail e senha:</h4>
             <div className="form">
               <div className="inputBox">
-                <input type="email" required="required" className="input-Text" onChange={e =>setEmail(e.target.value)} />
+                <input
+                  type="email"
+                  required="required"
+                  className="input-Text"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setError(false);
+                  }}
+                />
                 <span className="spanU">E-mail</span>
                 <div className="iconE"></div>
-                {error && email.length <= 0 ? 
-                <label>O campo e-mail não pode ficar vazio</label> : ""}
+                {error && <label>O campo e-mail não pode ficar vazio</label>}
               </div>
 
               <div className="inputBox">
@@ -98,8 +104,12 @@ function App() {
                   type={type}
                   required="required"
                   className="input-Psw"
-                  id="password" onChange={e => setPassword(e.target.value)}
-                /> 
+                  id="password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setError(false);
+                  }}
+                />
                 <span className="spanO">Senha</span>
                 <div
                   className="iconE"
@@ -112,11 +122,10 @@ function App() {
                     onClick={handleToggle}
                   />
                 </div>
-                {error && password.length <= 0 ?
-                <label>O campo senha não pode ficar vazio</label>: "" }
+                {error && <label>O campo senha não pode ficar vazio</label>}
               </div>
 
-              <button className="form-btn">Entrar</button>
+              <button className="form-btn" type="submit">Entrar</button>
               <div className="grups-text">
                 <h4 className="text-enter">Esqueci a senha</h4>
                 <hr className="linear-hr" />
@@ -131,8 +140,12 @@ function App() {
         <div className="grup-footer-text">
           <div className="div">
             <div className="description">
-              <h3><a href="#/">Termos de uso</a></h3>
-              <h3><a href="#/">Política de privacidade</a></h3>
+              <h3>
+                <a href="#/">Termos de uso</a>
+              </h3>
+              <h3>
+                <a href="#/">Política de privacidade</a>
+              </h3>
             </div>
             <div className="descriptions">
               <h5>
