@@ -1,21 +1,37 @@
-.App-logo {
-  width: 9em;
-}
 
 .App-header {
-  min-height: 16vh;
-  margin: 0 auto;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 16px;
+  position: relative;
+  grid-row: 1/1;
+  grid-column: 2/2;
 }
+figure{
+  padding: 0px;
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.App-logo {
+  width: 11em;
+}
+
+
+
 .container {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   margin: 2em 0 0 0;
+  text-align: center;
+    justify-content: center;
 }
 .title-test {
   color: #333;
@@ -30,8 +46,11 @@
   margin: 0 0.5em;
 }
 
+.arrow {
+  margin-right: 1em;
+}
 .arrow:hover {
-  color: #3458a4;
+  color: #ffcb00;
 }
 
 .App-main {
@@ -41,7 +60,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
+  height: 66vh;
 }
 
 .container-main {
@@ -51,17 +70,17 @@
   align-items: center;
 }
 .grups {
-  padding: 10px;
+  /* padding: 10px; */
   display: grid;
   grid-row-gap: 16px;
 }
 
 .btn {
   text-transform: uppercase;
-  padding: 15px;
+  padding: 10px;
   width: 100%;
   border-radius: 24px;
-  font-size: 14px;
+  /* font-size: 14px; */
   outline: none;
   border: none;
   display: flex;
@@ -75,8 +94,10 @@
   margin-right: 10px;
 }
 
-.btn h3 a {
+.btn > h3 > a {
   color: #fff;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .btn .icon {
@@ -104,7 +125,7 @@
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr auto 1fr;
-  margin-top: 1em;
+  /* margin-top: 1em; */
 }
 
 .linear p {
@@ -131,11 +152,11 @@
   margin-bottom: 11px;
 }
 
-.text-enter a {
+.text-enter, a {
   color: #666;
 }
 
-.text-enter a:hover {
+.text-enter:hover, a:hover {
   cursor: pointer;
   color: #ffcb00;
 }
@@ -144,7 +165,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px 10px;
-  gap: 14px;
+  gap: 26px;
 }
 
 .inputBox {
@@ -155,17 +176,19 @@
 .inputBox input {
   width: 100%;
   padding: 10px;
-  border: 0.5px solid #333;
+  /* border: 0.5px solid #333; */
+  border: 1px solid #ccc;
   border-radius: 5px;
   background: #fff;
   outline: none;
   transition: 0.5s;
+  height: 56px;
 }
 
 .inputBox span {
   position: absolute;
   left: 0;
-  padding: 10px;
+  padding: 20px;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -197,13 +220,15 @@ i {
   display: inline-block;
   position: relative;
   margin: 6px;
-  margin: -37px -11px -10px -37px;
+  /* margin: -37px -11px -10px -37px; */
+  margin: -45px -11px -10px -37px;
   height: 25px;
   padding-left: 2.5em;
 }
 .iconE {
   display: flex;
   margin: 6px 19px 6px 15em;
+  /* margin: -13px 19px 6px 15em; */
   flex-direction: row-reverse;
 }
 
@@ -217,7 +242,7 @@ i {
 }
 
 .form-btn {
-  margin-top: 2em;
+  margin-top: 0em;
   text-transform: uppercase;
   padding: 15px;
   width: 100%;
@@ -233,16 +258,16 @@ i {
   cursor: pointer;
   background: #ffcb00;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.4s;
   color: #000;
 }
 
 
 .form-btn:hover{
   opacity: 0.9;
-  background: rgba(255, 38, 0, 0.878);
-  /* color: rgb(255, 255, 255); */
-  box-shadow: 1px 1px 10px #ff220093;
+  background: #3458a4;
+  color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 10px #3458a4;
 }
 .form-btn > a {
   width: 100%;
@@ -262,13 +287,13 @@ a:hover {
   -webkit-box-align: center;
   align-items: center;
   flex-direction: column;
-  height: 106px;
+  /* height: 106px; */
   background: #fafafa;
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 0px 0px inset;
   margin-top: 32px;
   grid-area: footer / footer / footer / footer;
   position: absolute;
-  height: 17.3vh;
+  /* height: 17.3vh; */
 }
 
 .div {
@@ -327,4 +352,9 @@ a:hover {
 
 label {
   color: red;
+  padding: 10px ;
+  font-size: 11px;
+  display: flex;
+  margin-top: -14px;
 }
+

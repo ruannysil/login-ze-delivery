@@ -35,15 +35,14 @@ function App() {
     console.log(email, password);
   }
 
-  // const errors = {
-  //   userEmail: 
-  // }
 
   return (
     
     <div className="App">
       <header className="App-header">
+        <figure>
         <img src={logo} className="App-logo" alt="logo" />
+        </figure>
         <div className="container">
           <h5 className="title-test">Entra na conta com outros serviçõs:</h5>
           <div className="icon arrow">
@@ -58,7 +57,7 @@ function App() {
 
             <button className="btn primary">
               <h3>
-                <a href="#/">entrar com facebook</a>
+                <a href="#/">continuar com facebook</a>
               </h3>
               <div className="icon primary">
                 <BsFacebook />
@@ -67,7 +66,7 @@ function App() {
 
             <button className="btn secudary">
               <h3>
-                <a href="#/">entrar com a apple</a>
+                <a href="#/">Iniciar sessão com a Apple</a>
               </h3>
               <div className="icon secudary">
                 <BsApple />
@@ -83,24 +82,24 @@ function App() {
             </div>
           </div>
 
-          <from onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <h4 className="text-enter">Entar na conta com E-mail e senha:</h4>
             <div className="form">
               <div className="inputBox">
-                <input type="text" required="required" className="input-Text" onChange={e =>setEmail(e.target.value)} />
+                <input type="email" required="required" className="input-Text" onChange={e =>setEmail(e.target.value)} />
                 <span className="spanU">E-mail</span>
+                <div className="iconE"></div>
+                {error && email.length <= 0 ? 
+                <label>O campo e-mail não pode ficar vazio</label> : ""}
               </div>
-              
-              {error && email.length <= 0 ? 
-                <label>ocorreu um error</label> : ""}
 
               <div className="inputBox">
                 <input
                   type={type}
                   required="required"
                   className="input-Psw"
-                  id="password" onChange={e=>setPassword(e.target.value)}
-                />
+                  id="password" onChange={e => setPassword(e.target.value)}
+                /> 
                 <span className="spanO">Senha</span>
                 <div
                   className="iconE"
@@ -114,17 +113,17 @@ function App() {
                   />
                 </div>
                 {error && password.length <= 0 ?
-                <label>ocorreu um error</label>: "" }
+                <label>O campo senha não pode ficar vazio</label>: "" }
               </div>
 
-              <button className="form-btn"><a href="#/">Entrar</a></button>
+              <button className="form-btn">Entrar</button>
               <div className="grups-text">
-                <h4 className="text-enter"><a href="#/">Esqueci a senha</a></h4>
+                <h4 className="text-enter">Esqueci a senha</h4>
                 <hr className="linear-hr" />
-                <h4 className="text-enter text"><a href="#/">Quero criar uma conta</a></h4>
+                <h4 className="text-enter text">Quero criar uma conta</h4>
               </div>
             </div>
-          </from>
+          </form>
         </div>
       </main>
 
