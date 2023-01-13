@@ -11,7 +11,7 @@ Projeto Tela de Login Zé Deliveryr.
 </p>
 
 <p align="center">
-  <img alt="License" src="https://user-images.githubusercontent.com/84647446/212433817-08f5e4a8-0e3d-4430-abf0-178551e4596d.jpg" width="500px">
+  <img alt="License" src="https://user-images.githubusercontent.com/84647446/212433817-08f5e4a8-0e3d-4430-abf0-178551e4596d.jpg" width="700px">
 </p>
 
 <br>
